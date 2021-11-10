@@ -13,12 +13,12 @@ import numpy as np
 class NN(nn.Module):
     def __init__(self, input_size):
         super(NN, self).__init__()
-        self.net = nn.Sequential(
-            nn.BatchNorm1d(input_size),
-            nn.Linear(input_size, 50),
-            nn.ReLU(inplace=True),
-            nn.Linear(50,1),
-        )
+        # self.net = nn.Sequential(
+        #     nn.BatchNorm1d(input_size),
+        #     nn.Linear(input_size, 50),
+        #     nn.ReLU(inplace=True),
+        #     nn.Linear(50,1),
+        # )
 
     def forward(self, x):
         return torch.sigmoid(self.net(x)).view(-1)
